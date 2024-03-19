@@ -1,0 +1,32 @@
+Question : Write a blog on Difference between HTTP1.1 vs HTTP2
+
+* HTTP/1.1 was first used in 1997 after several stages of development.Although
+  users had several problems in using it.To overcome this issue, HTTP/2 was 
+  launched on 2015.
+
+Differences :
+
+    1.Major problem in HTTP/1.1 was it took lot of time to load the contents
+      in the web page as the priority of loading the contents are not in
+      the efficient order. Ex. If a user is at the top of the page,the contents
+      at the bottom of the page loading at first affets the web performance.
+      
+    2.HTTP/2 solved this problem by loading the contents in an efficient manner.
+      Such that,if a user is at the top of the page,the contents in the top of 
+      the page such as headings,titles,images are loaded first for the user.
+
+    3.So,HTTP/1.1 took more time to load and HTTP/2 took less time than HTTP 1 
+      and became more user friendly.      
+
+    4.HTTP/1.1 works on the textual format and HTTP/2 works on 
+      the binary protocol.
+
+    5.HTTP/2 compressed the small files faster and better than the HTTP/1 by
+      using the advanced compression method called HPACK.Hence,resulted in
+      better web performance.
+
+    6.HTTP/1.1 loads the contents one after the another,if a resource doesn't work 
+      then it blocks the resources after it.HTTP/2 solved this problem by using
+      TCP connection.So,that no resource blocks the other resource.  
+
+   
