@@ -1,14 +1,83 @@
 Question : Write a blog about objects and its internal representation in Javascript
 
-Objects :
+JavaScript Objects:
+JavaScript objects are a key part of the language, letting you store and manage data easily.
 
-    * An object is a complex data type in Javascript which is an unordered collection
-      of related data stored in "key:value" pairs.
-      Example: const car = {color:"White",engine:"Diesel"}
+What is an Object in JavaScript?
+An object in JavaScript is a collection of key-value pairs. The keys are strings (or symbols), and the values can be any type, 
+like numbers, strings, arrays, functions, or other objects.
 
-    * The "keys" can be a variable or a function and the values assigned
-      to a key can only be accessed with the key names.
-      Example: Object_Name.key_name
+  Example:
 
-    * The objects have several properties and methods by which we can 
-      manipulate the data in it.   
+  let person = {
+    name: "John Doe",
+    age: 30,
+    greet: function() {
+      console.log("Hello, my name is " + this.name);
+    }
+  };
+
+In this example, `person` is an object with three properties: `name`, `age`, and `greet`. The `greet` property is a function.
+
+Creating and Accessing Objects
+
+You can create objects in three main ways:
+
+1. Object Literals: The simplest way.
+   
+   let car = {
+     make: "Toyota",
+     model: "Camry",
+     year: 2020
+   };
+   
+2. Object Constructor: Another way to create objects.
+   
+   let car = new Object();
+   car.make = "Toyota";
+   car.model = "Camry";
+   car.year = 2020;
+   
+3. Object.create: Creates an object with a specified prototype.
+   
+   let car = Object.create(Object.prototype);
+   car.make = "Toyota";
+   car.model = "Camry";
+   car.year = 2020;
+
+You can access object properties using dot notation or bracket notation:
+console.log(car.make); // Output: Toyota
+console.log(car["model"]); // Output: Camry
+
+
+Internal Representation of Objects:
+Internally, JavaScript objects are like hash maps, storing key-value pairs for quick access.
+ Each property (key) points to a value, making it easy to retrieve data.
+
+
+Working with Object Properties:
+
+1. Adding Properties: Add properties at any time.
+   
+   car.color = "red";
+   
+
+2. Updating Properties: Change the value of existing properties.
+   
+   car.year = 2021;
+   
+
+3. Deleting Properties: Remove properties using the `delete` operator.
+   
+   delete car.model;
+   
+
+4. Checking Properties: See if a property exists.
+   
+   console.log("make" in car); // Output: true
+   console.log(car.hasOwnProperty("model")); // Output: false
+   
+Conclusion:
+JavaScript objects helps to organize data and functions.
+They are flexible and powerful and let us to model real-world entities easily.
+By understanding how to create and use objects, we can write better and more efficient JavaScript code.

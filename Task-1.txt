@@ -1,32 +1,58 @@
 Question : Write a blog on Difference between HTTP1.1 vs HTTP2
 
-* HTTP/1.1 was first used in 1997 after several stages of development.Although
-  users had several problems in using it.To overcome this issue, HTTP/2 was 
-  launched on 2015.
+What is HTTP/1.1?
 
-Differences :
+HTTP/1.1 was first used in 1997 after several stages of development.Although
+users had several problems in using it.To overcome this issue, HTTP/2 was 
+launched on 2015.
 
-    1.Major problem in HTTP/1.1 was it took lot of time to load the contents
-      in the web page as the priority of loading the contents are not in
-      the efficient order. Ex. If a user is at the top of the page,the contents
-      at the bottom of the page loading at first affets the web performance.
-      
-    2.HTTP/2 solved this problem by loading the contents in an efficient manner.
-      Such that,if a user is at the top of the page,the contents in the top of 
-      the page such as headings,titles,images are loaded first for the user.
+Limitations of HTTP/1.1
 
-    3.So,HTTP/1.1 took more time to load and HTTP/2 took less time than HTTP 1 
-      and became more user friendly.      
+Head-of-Line Blocking: Only one request can be processed at a time per connection. If one request is slow, all others have to wait.
+Multiple Connections: Browsers open several connections to the same server to load resources faster, but each connection still has head-of-line blocking issues.
+Redundant Headers: Every request includes headers, and often these headers contain the same information, leading to unnecessary data being sent repeatedly.
+Inefficient Bandwidth Use: Resources are not prioritized, so important data might not get through as quickly as needed.
 
-    4.HTTP/1.1 works on the textual format and HTTP/2 works on 
-      the binary protocol.
+What is HTTP/2?
 
-    5.HTTP/2 compressed the small files faster and better than the HTTP/1 by
-      using the advanced compression method called HPACK.Hence,resulted in
-      better web performance.
+HTTP/2, introduced in 2015, addresses the limitations of HTTP/1.1 and makes web communication faster and more efficient. Here are its main features:
 
-    6.HTTP/1.1 loads the contents one after the another,if a resource doesn't work 
-      then it blocks the resources after it.HTTP/2 solved this problem by using
-      TCP connection.So,that no resource blocks the other resource.  
+Binary Protocol: HTTP/2 uses a binary format instead of the text format used by HTTP/1.1.
+This makes data transfer more efficient and easier for computers to handle.
+
+Multiplexing: Multiple requests and responses can be sent simultaneously over a single connection,
+eliminating the head-of-line blocking problem.
+
+Header Compression: HTTP/2 compresses headers to reduce the amount of redundant data sent, saving bandwidth.
+
+Stream Prioritization: Clients can prioritize different data streams, so more important resources load faster.
+
+Server Push: Servers can send resources to clients before they are requested, speeding up page load times.
+
+Key Differences Between HTTP/1.1 and HTTP/2
+
+Data Format:
+HTTP/1.1: Uses a text-based format that is easy for humans to read but less efficient for computers.
+HTTP/2: Uses a binary format that is more compact and faster for computers to process.
+
+Handling Multiple Requests:
+HTTP/1.1: Can only handle one request per connection at a time, leading to delays.
+HTTP/2: Can handle many requests at once over a single connection, which speeds things up.
+
+Headers:
+HTTP/1.1: Sends headers with every request, even if they are the same each time.
+HTTP/2: Compresses headers, reducing the amount of data sent.
+
+Connections:
+HTTP/1.1: Needs multiple connections to load all resources, each suffering from head-of-line blocking.
+HTTP/2: Uses one connection per server, thanks to multiplexing.
+
+Pushing Data:
+HTTP/1.1: Server only sends data when the client requests it.
+HTTP/2: Server can push data to the client proactively, which can make web pages load faster.
+
+Prioritizing Data:
+HTTP/1.1: No built-in way to prioritize which data gets sent first.
+HTTP/2: Allows prioritization of streams, so more important resources can load first. 
 
    
